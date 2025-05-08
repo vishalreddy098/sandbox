@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: goapp
-          image: <YOUR_DOCKERHUB_USERNAME>/goapp:latest
+          image: vishalreddy11/goapp:latest
           ports:
             - containerPort: 8080
 ---
