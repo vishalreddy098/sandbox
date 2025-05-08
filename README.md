@@ -1,1 +1,1 @@
-# sandbox
+# Sandbox Project with Gin + Postgres + Minikube CI/CD

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pgadmin
+spec:
+  containers:
+    - name: pgadmin
+      image: dpage/pgadmin4
+      env:
+        - name: PGADMIN_DEFAULT_EMAIL
+          value: "admin@admin.com"
+        - name: PGADMIN_DEFAULT_PASSWORD
+          value: "admin"
+      ports:
+        - containerPort: 80

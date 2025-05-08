@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: goapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: goapp
+  template:
+    metadata:
+      labels:
+        app: goapp
+    spec:
+      containers:
+        - name: goapp
+          image: <YOUR_DOCKERHUB_USERNAME>/goapp:latest
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: goapp-service
+spec:
+  type: NodePort
+  selector:
+    app: goapp
+  ports:
+    - port: 8080
+      targetPort: 8080
+      nodePort: 30008
